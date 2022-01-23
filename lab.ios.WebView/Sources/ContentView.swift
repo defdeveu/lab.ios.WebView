@@ -5,9 +5,6 @@ struct ContentView: View {
         VStack(spacing: 36) {
             Spacer()
 
-            NavigationLink(destination: FirstWebView(),
-                           label: { scenarioLabel("UIWebView") })
-
             NavigationLink(destination: SecondWebView(),
                            label: { scenarioLabel("WKWebView") })
 

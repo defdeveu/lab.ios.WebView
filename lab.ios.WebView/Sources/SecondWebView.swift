@@ -12,11 +12,7 @@ struct WebView_WK: UIViewRepresentable {
     var url: URL
 
     func makeUIView(context: Context) -> WKWebView {
-        let webView = WKWebView()
-        webView.configuration.preferences.isFraudulentWebsiteWarningEnabled = false
-        webView.configuration.preferences.javaScriptCanOpenWindowsAutomatically = true
-        webView.configuration.preferences.setValue(true, forKey: "allowFileAccessFromFileURLs")
-        return webView
+        return WKWebView()
     }
 
     func updateUIView(_ webView: WKWebView, context: Context) {

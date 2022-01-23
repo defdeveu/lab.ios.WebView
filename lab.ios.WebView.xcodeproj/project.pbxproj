@@ -12,7 +12,6 @@
 		FA259447279D72490021990D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA259446279D72490021990D /* Assets.xcassets */; };
 		FA25944A279D72490021990D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA259449279D72490021990D /* Preview Assets.xcassets */; };
 		FA259453279D77780021990D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA259452279D77780021990D /* Utils.swift */; };
-		FA259455279D78190021990D /* FirstWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA259454279D78190021990D /* FirstWebView.swift */; };
 		FA259457279D782B0021990D /* SecondWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA259456279D782B0021990D /* SecondWebView.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,7 +22,6 @@
 		FA259446279D72490021990D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA259449279D72490021990D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FA259452279D77780021990D /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		FA259454279D78190021990D /* FirstWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstWebView.swift; sourceTree = "<group>"; };
 		FA259456279D782B0021990D /* SecondWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondWebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,7 +76,6 @@
 			children = (
 				FA259451279D74640021990D /* Utils */,
 				FA259444279D72470021990D /* ContentView.swift */,
-				FA259454279D78190021990D /* FirstWebView.swift */,
 				FA259456279D782B0021990D /* SecondWebView.swift */,
 			);
 			path = Sources;
@@ -165,7 +162,6 @@
 				FA259445279D72470021990D /* ContentView.swift in Sources */,
 				FA259457279D782B0021990D /* SecondWebView.swift in Sources */,
 				FA259443279D72470021990D /* lab_ios_WebViewApp.swift in Sources */,
-				FA259455279D78190021990D /* FirstWebView.swift in Sources */,
 				FA259453279D77780021990D /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
