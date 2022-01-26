@@ -5,13 +5,16 @@ struct SecondWebView: View {
     private let viewModel: SecondWebViewModel = SecondWebViewModel()
 
     var body: some View {
-        WebView_WK(navigationDelegate: viewModel, url: URL(string: SecondWebViewModel.defaultURLString)!)
+        WebView_WK(navigationDelegate: viewModel,
+                   messageHandler: viewModel,
+                   url: URL(string: SecondWebViewModel.defaultURLString)!)
     }
 }
 
 struct WebView_WK: UIViewRepresentable {
 
     weak var navigationDelegate: WKNavigationDelegate?
+    let messageHandler: WKScriptMessageHandlerWithReply
     var url: URL
 
     func makeUIView(context: Context) -> WKWebView {
@@ -20,6 +23,7 @@ struct WebView_WK: UIViewRepresentable {
         webView.configuration.preferences.isFraudulentWebsiteWarningEnabled = false
         webView.configuration.preferences.javaScriptCanOpenWindowsAutomatically = true
         webView.configuration.preferences.setValue(true, forKey: "allowFileAccessFromFileURLs")
+        webView.configuration.userContentController.addScriptMessageHandler(messageHandler, contentWorld: .page, name: SecondWebViewModel.messageHandleName)
         return webView
     }
 
