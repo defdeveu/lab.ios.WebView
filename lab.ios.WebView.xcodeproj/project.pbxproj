@@ -14,7 +14,6 @@
 		FA259453279D77780021990D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA259452279D77780021990D /* Utils.swift */; };
 		FA259455279D78190021990D /* FirstWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA259454279D78190021990D /* FirstWebView.swift */; };
 		FA259457279D782B0021990D /* SecondWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA259456279D782B0021990D /* SecondWebView.swift */; };
-		FAC00EFD279EA05B005F7FE1 /* SecondWebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC00EFC279EA05B005F7FE1 /* SecondWebViewModel.swift */; };
 		FAC00EFF279EA086005F7FE1 /* URLOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC00EFE279EA086005F7FE1 /* URLOpener.swift */; };
 		FAC00F01279EA141005F7FE1 /* AppRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC00F00279EA141005F7FE1 /* AppRepository.swift */; };
 /* End PBXBuildFile section */
@@ -28,7 +27,6 @@
 		FA259452279D77780021990D /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		FA259454279D78190021990D /* FirstWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstWebView.swift; sourceTree = "<group>"; };
 		FA259456279D782B0021990D /* SecondWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondWebView.swift; sourceTree = "<group>"; };
-		FAC00EFC279EA05B005F7FE1 /* SecondWebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondWebViewModel.swift; sourceTree = "<group>"; };
 		FAC00EFE279EA086005F7FE1 /* URLOpener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLOpener.swift; sourceTree = "<group>"; };
 		FAC00F00279EA141005F7FE1 /* AppRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,7 +84,6 @@
 				FA259444279D72470021990D /* ContentView.swift */,
 				FA259454279D78190021990D /* FirstWebView.swift */,
 				FA259456279D782B0021990D /* SecondWebView.swift */,
-				FAC00EFC279EA05B005F7FE1 /* SecondWebViewModel.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -172,7 +169,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA259445279D72470021990D /* ContentView.swift in Sources */,
-				FAC00EFD279EA05B005F7FE1 /* SecondWebViewModel.swift in Sources */,
 				FA259457279D782B0021990D /* SecondWebView.swift in Sources */,
 				FA259443279D72470021990D /* lab_ios_WebViewApp.swift in Sources */,
 				FA259455279D78190021990D /* FirstWebView.swift in Sources */,
