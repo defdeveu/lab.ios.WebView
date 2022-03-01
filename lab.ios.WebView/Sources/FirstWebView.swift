@@ -3,7 +3,7 @@ import WebKit
 
 struct FirstWebView: View {
     var body: some View {
-        WebView_UI(url: URL(string: "https://www.google.com")!)
+        WebView_UI(url: URL(string: "https://zs.labs.defdev.eu/eula.html")!)
     }
 }
 
