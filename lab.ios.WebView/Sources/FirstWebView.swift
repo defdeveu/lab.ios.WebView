@@ -1,22 +1,24 @@
+import Foundation
 import SwiftUI
 import WebKit
 
 struct FirstWebView: View {
+    static let pageURL = URL(string: "https://zs.labs.defdev.eu/eula.html")!
+
     var body: some View {
-        WebView_UI(url: URL(string: "https://zs.labs.defdev.eu/eula.html")!)
+        WebView_UI(url: Self.pageURL)
     }
 }
 
 struct WebView_UI: UIViewRepresentable {
-
-    var url: URL
+    let url: URL
 
     func makeUIView(context: Context) -> UIWebView {
-        return UIWebView()
+        UIWebView()
     }
 
     func updateUIView(_ webView: UIWebView, context: Context) {
-        let request = URLRequest(url: url)
-        webView.loadRequest(request)
+        guard webView.request?.url != url else { return }
+        webView.loadRequest(URLRequest(url: url))
     }
 }
