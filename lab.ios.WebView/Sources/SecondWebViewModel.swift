@@ -1,25 +1,30 @@
 import Foundation
 import WebKit
 
-class SecondWebViewModel: NSObject {
-    static let defaultURLString = "https://zs.labs.defdev.eu/eula.html"
-    private let urlOpener: URLOpenerProtocol
+@MainActor
+final class SecondWebViewModel: NSObject {
+    static let defaultURL = URL(string: "https://zs.labs.defdev.eu/eula.html")!
+    private let urlOpener: any URLOpenerProtocol
 
-    init(urlOpener: URLOpenerProtocol = AppRepository.shared.urlOpener) {
+    init(urlOpener: any URLOpenerProtocol = AppRepository.shared.urlOpener) {
         self.urlOpener = urlOpener
+    }
+
+    func navigationPolicy(for url: URL?) -> WKNavigationActionPolicy {
+        guard let url, url != Self.defaultURL else {
+            return .allow
+        }
+
+        urlOpener.open(url)
+        return .cancel
     }
 }
 
 extension SecondWebViewModel: WKNavigationDelegate {
-    func webView(_ webView: WKWebView,
-                 decidePolicyFor navigationAction: WKNavigationAction,
-                 decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        guard let url = navigationAction.request.url, url.absoluteString != Self.defaultURLString else {
-            decisionHandler(.allow)
-            return
-        }
-
-        decisionHandler(.cancel)
-        urlOpener.open(url)
+    func webView(
+        _ webView: WKWebView,
+        decidePolicyFor navigationAction: WKNavigationAction
+    ) async -> WKNavigationActionPolicy {
+        navigationPolicy(for: navigationAction.request.url)
     }
 }
