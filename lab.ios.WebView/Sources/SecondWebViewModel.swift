@@ -1,51 +1,59 @@
 import Foundation
 import WebKit
 
-class SecondWebViewModel: NSObject {
-    static let messageHandleName = "SystemAPI"
-    static let defaultURLString = "https://zs.labs.defdev.eu/forums.html"
-    private let urlOpener: URLOpenerProtocol
+@MainActor
+final class SecondWebViewModel: NSObject {
+    static let messageHandlerName = "SystemAPI"
+    static let defaultURL = URL(string: "https://zs.labs.defdev.eu/forums.html")!
+    private let urlOpener: any URLOpenerProtocol
 
-    init(urlOpener: URLOpenerProtocol = AppRepository.shared.urlOpener) {
+    init(urlOpener: any URLOpenerProtocol = AppRepository.shared.urlOpener) {
         self.urlOpener = urlOpener
+    }
+
+    func navigationPolicy(for url: URL?) -> WKNavigationActionPolicy {
+        guard let url, url != Self.defaultURL else {
+            return .allow
+        }
+
+        urlOpener.open(url)
+        return .cancel
     }
 }
 
 extension SecondWebViewModel: WKNavigationDelegate {
-    func webView(_ webView: WKWebView,
-                 decidePolicyFor navigationAction: WKNavigationAction,
-                 decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        guard let url = navigationAction.request.url, url.absoluteString != Self.defaultURLString else {
-            decisionHandler(.allow)
-            return
-        }
-
-        decisionHandler(.cancel)
-        urlOpener.open(url)
+    func webView(
+        _ webView: WKWebView,
+        decidePolicyFor navigationAction: WKNavigationAction
+    ) async -> WKNavigationActionPolicy {
+        navigationPolicy(for: navigationAction.request.url)
     }
 }
 
 extension SecondWebViewModel: WKScriptMessageHandlerWithReply {
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage, replyHandler: @escaping (Any?, String?) -> Void) {
-        if message.name == Self.messageHandleName {
-            guard let dictionary = message.body as? [String: AnyObject],
-                  let command = dictionary["command"] as? String,
-                  let parameter = dictionary["parameter"] as? String else {
-                      return
-                  }
-            switch command {
-            case "loadFile":
-                print("Loading file \(parameter)")
-                replyHandler("Some file content", nil)
-            case "loadContact":
-                print("Getting contact of \(parameter)")
-                replyHandler("+123456789", nil)
-            default:
-                print("Command not recognized")
-                replyHandler(nil, "unrecognized command, sorry")
-            }
-        } else {
-            replyHandler(nil, "undefined command")
+    func userContentController(
+        _ userContentController: WKUserContentController,
+        didReceive message: WKScriptMessage
+    ) async -> (Any?, String?) {
+        guard message.name == Self.messageHandlerName else {
+            return (nil, "undefined command")
+        }
+        guard let dictionary = message.body as? [String: Any],
+              let command = dictionary["command"] as? String,
+              let parameter = dictionary["parameter"] as? String else {
+            return (nil, "invalid command")
+        }
+
+        switch command {
+        case "loadFile":
+            print("Loading file \(parameter)")
+            return ("Some file content", nil)
+        case "loadContact":
+            print("Getting contact of \(parameter)")
+            return ("+123456789", nil)
+        default:
+            print("Command not recognized")
+            return (nil, "unrecognized command, sorry")
         }
     }
 }

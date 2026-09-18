@@ -2,11 +2,13 @@ import Foundation
 
 // MARK: - Application Services
 
+@MainActor
 final class AppRepository {
-    static var shared = AppRepository()
-    private init() { }
+    static let shared = AppRepository()
 
-    lazy var urlOpener: URLOpenerProtocol = {
-        URLOpener()
-    }()
+    let urlOpener: any URLOpenerProtocol
+
+    init(urlOpener: any URLOpenerProtocol = URLOpener()) {
+        self.urlOpener = urlOpener
+    }
 }
