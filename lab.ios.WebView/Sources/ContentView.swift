@@ -5,8 +5,11 @@ struct ContentView: View {
         VStack(spacing: 36) {
             Spacer()
 
-            NavigationLink(destination: SecondWebView(),
-                           label: { scenarioLabel("WKWebView") })
+            NavigationLink {
+                SecondWebView()
+            } label: {
+                scenarioLabel("WKWebView")
+            }
 
             Spacer()
             Spacer()
@@ -20,37 +23,38 @@ struct ContentView: View {
     private func scenarioLabel(_ title: String) -> some View {
         Text(title)
             .font(.title2.bold())
-            .foregroundColor(AppColors.buttonText)
+            .foregroundStyle(AppColors.buttonText)
             .frame(width: 200)
             .padding()
             .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(AppColors.buttonText, lineWidth: 2)
-                )
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(AppColors.buttonBorder, lineWidth: 2)
+            )
     }
 
     @ToolbarContentBuilder
     private func appTitle() -> some ToolbarContent {
-        ToolbarItem(placement: .navigationBarLeading) {
+        ToolbarItem(placement: .topBarLeading) {
             HStack {
                 AppImages.appTitleImage
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .colorInvert()
-                // TODO colorInvert as per the scheme
+                    .renderingMode(.template)
+                    .scaledToFit()
+                    .foregroundStyle(.primary)
+                    .frame(width: 36, height: 36)
+                    .accessibilityHidden(true)
                 Text(AppStrings.appTitle)
                     .font(.title.bold())
-                    .foregroundColor(AppColors.navigationForeground)
+                    .foregroundStyle(AppColors.navigationForeground)
             }
-            .padding(.bottom, 8)
         }
     }
 }
 
-@available(iOS 15.0, *)
-struct ContentView_Previews: PreviewProvider {
+struct ContentViewPreviews: PreviewProvider {
     static var previews: some View {
-        ContentView()
-            .previewInterfaceOrientation(.landscapeLeft)
+        NavigationStack {
+            ContentView()
+        }
     }
 }

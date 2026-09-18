@@ -1,31 +1,13 @@
 import SwiftUI
 
 @main
-struct lab_ios_WebViewApp: App {
-    init() {
-        let appearance = UINavigationBarAppearance()
-        appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = UIColor(AppColors.navigationBackground)
-        appearance.backgroundImage = AppImages.navigationImage
-
-        let attrs: [NSAttributedString.Key: Any] = [
-            .foregroundColor: UIColor(AppColors.navigationForeground)
-        ]
-
-        appearance.largeTitleTextAttributes = attrs
-        appearance.titleTextAttributes = attrs
-
-        UINavigationBar.appearance().scrollEdgeAppearance = appearance
-        UINavigationBar.appearance().standardAppearance = appearance
-    }
-
+struct WebViewLabApp: App {
     var body: some Scene {
         WindowGroup {
-            NavigationView {
+            NavigationStack {
                 ContentView()
             }
-            .navigationViewStyle(.stack)
-            .preferredColorScheme(.dark)
+            .tint(AppColors.navigationForeground)
         }
     }
 }
