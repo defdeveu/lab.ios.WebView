@@ -42,7 +42,7 @@ struct ContentView: View {
     private func appTitle() -> some ToolbarContent {
         ToolbarItem(placement: .topBarLeading) {
             HStack {
-                AppImages.appTitleImage
+                Image(.logoDddStamp1905)
                     .resizable()
                     .renderingMode(.template)
                     .scaledToFit()
@@ -57,10 +57,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentViewPreviews: PreviewProvider {
-    static var previews: some View {
-        NavigationStack {
-            ContentView()
-        }
+#Preview {
+    NavigationStack {
+        ContentView()
     }
 }

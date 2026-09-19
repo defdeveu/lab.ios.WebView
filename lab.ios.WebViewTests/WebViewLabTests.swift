@@ -1,37 +1,41 @@
 import Foundation
 import WebKit
-import XCTest
+import Testing
 @testable import lab_ios_WebView
 
 @MainActor
-final class SecondWebViewModelTests: XCTestCase {
-    func testAllowsTheConfiguredPageWithoutOpeningAnotherApplication() {
+@Suite
+struct SecondWebViewModelTests {
+    @Test
+    func allowsTheConfiguredPageWithoutOpeningAnotherApplication() {
         let opener = RecordingURLOpener()
         let viewModel = SecondWebViewModel(urlOpener: opener)
 
         let policy = viewModel.navigationPolicy(for: SecondWebViewModel.defaultURL)
 
-        XCTAssertEqual(policy, .allow)
-        XCTAssertTrue(opener.openedURLs.isEmpty)
+        #expect(policy == .allow)
+        #expect(opener.openedURLs.isEmpty)
     }
 
-    func testCancelsAnotherURLAndHandsItToTheSystem() {
+    @Test
+    func cancelsAnotherURLAndHandsItToTheSystem() {
         let opener = RecordingURLOpener()
         let viewModel = SecondWebViewModel(urlOpener: opener)
         let externalURL = URL(string: "https://example.com/next")!
 
         let policy = viewModel.navigationPolicy(for: externalURL)
 
-        XCTAssertEqual(policy, .cancel)
-        XCTAssertEqual(opener.openedURLs, [externalURL])
+        #expect(policy == .cancel)
+        #expect(opener.openedURLs == [externalURL])
     }
 
-    func testAllowsNavigationWithoutAURL() {
+    @Test
+    func allowsNavigationWithoutAURL() {
         let opener = RecordingURLOpener()
         let viewModel = SecondWebViewModel(urlOpener: opener)
 
-        XCTAssertEqual(viewModel.navigationPolicy(for: nil), .allow)
-        XCTAssertTrue(opener.openedURLs.isEmpty)
+        #expect(viewModel.navigationPolicy(for: nil) == .allow)
+        #expect(opener.openedURLs.isEmpty)
     }
 }
 
