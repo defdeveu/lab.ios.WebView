@@ -3,21 +3,9 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		FA259443279D72470021990D /* lab_ios_WebViewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA259442279D72470021990D /* lab_ios_WebViewApp.swift */; };
-		FA259445279D72470021990D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA259444279D72470021990D /* ContentView.swift */; };
-		FA259447279D72490021990D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA259446279D72490021990D /* Assets.xcassets */; };
-		FA25944A279D72490021990D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA259449279D72490021990D /* Preview Assets.xcassets */; };
-		FA259453279D77780021990D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA259452279D77780021990D /* Utils.swift */; };
-		FA259455279D78190021990D /* FirstWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA259454279D78190021990D /* FirstWebView.swift */; };
-		FA259457279D782B0021990D /* SecondWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA259456279D782B0021990D /* SecondWebView.swift */; };
-		FAC00EFF279EA086005F7FE1 /* URLOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC00EFE279EA086005F7FE1 /* URLOpener.swift */; };
-		FAC00F01279EA141005F7FE1 /* AppRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC00F00279EA141005F7FE1 /* AppRepository.swift */; };
-		FB1000000000000000000001 /* WebViewLabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2000000000000000000001 /* WebViewLabTests.swift */; };
-/* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		FB3000000000000000000001 /* PBXContainerItemProxy */ = {
@@ -30,20 +18,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+
 		FA25943F279D72470021990D /* WebView lab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WebView lab.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA259442279D72470021990D /* lab_ios_WebViewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lab_ios_WebViewApp.swift; sourceTree = "<group>"; };
-		FA259444279D72470021990D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		FA259446279D72490021990D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FA259449279D72490021990D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		FA259452279D77780021990D /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		FA259454279D78190021990D /* FirstWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstWebView.swift; sourceTree = "<group>"; };
-		FA259456279D782B0021990D /* SecondWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondWebView.swift; sourceTree = "<group>"; };
-		FAC00EFE279EA086005F7FE1 /* URLOpener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLOpener.swift; sourceTree = "<group>"; };
-		FAC00F00279EA141005F7FE1 /* AppRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRepository.swift; sourceTree = "<group>"; };
-		FB2000000000000000000001 /* WebViewLabTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewLabTests.swift; sourceTree = "<group>"; };
+
 		FB2000000000000000000002 /* WebView labTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WebView labTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+
+		C99FEE774F08BC981CEA3E70 /* lab.ios.WebView */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = lab.ios.WebView;
+			sourceTree = "<group>";
+		};
+		0C2434FE77E8BC825F7A9328 /* lab.ios.WebViewTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = lab.ios.WebViewTests;
+			sourceTree = "<group>";
+		};
+
+/* End PBXFileSystemSynchronizedRootGroup section */
 /* Begin PBXFrameworksBuildPhase section */
 		FA25943C279D72470021990D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -62,70 +56,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+
 		FA259436279D72470021990D = {
 			isa = PBXGroup;
 			children = (
-				FA259441279D72470021990D /* lab.ios.WebView */,
-				FB5000000000000000000001 /* lab.ios.WebViewTests */,
-				FA259440279D72470021990D /* Products */,
+				C99FEE774F08BC981CEA3E70,
+				0C2434FE77E8BC825F7A9328,
+				FA259440279D72470021990D,
 			);
 			sourceTree = "<group>";
 		};
+
 		FA259440279D72470021990D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FA25943F279D72470021990D /* WebView lab.app */,
-				FB2000000000000000000002 /* WebView labTests.xctest */,
+				FA25943F279D72470021990D,
+				FB2000000000000000000002,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		FA259441279D72470021990D /* lab.ios.WebView */ = {
-			isa = PBXGroup;
-			children = (
-				FA259450279D74490021990D /* Sources */,
-				FA259442279D72470021990D /* lab_ios_WebViewApp.swift */,
-				FA259446279D72490021990D /* Assets.xcassets */,
-				FA259448279D72490021990D /* Preview Content */,
-			);
-			path = lab.ios.WebView;
-			sourceTree = "<group>";
-		};
-		FA259448279D72490021990D /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				FA259449279D72490021990D /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		FA259450279D74490021990D /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				FA259451279D74640021990D /* Utils */,
-				FA259444279D72470021990D /* ContentView.swift */,
-				FA259454279D78190021990D /* FirstWebView.swift */,
-				FA259456279D782B0021990D /* SecondWebView.swift */,
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
-		FA259451279D74640021990D /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				FA259452279D77780021990D /* Utils.swift */,
-				FAC00EFE279EA086005F7FE1 /* URLOpener.swift */,
-				FAC00F00279EA141005F7FE1 /* AppRepository.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
-		FB5000000000000000000001 /* lab.ios.WebViewTests */ = {
-			isa = PBXGroup;
-			children = (
-				FB2000000000000000000001 /* WebViewLabTests.swift */,
-			);
-			path = lab.ios.WebViewTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +90,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				C99FEE774F08BC981CEA3E70 /* lab.ios.WebView */,
 			);
 			name = lab.ios.WebView;
 			productName = lab.ios.WebView;
@@ -160,6 +111,9 @@
 			);
 			dependencies = (
 				FB9000000000000000000001 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				0C2434FE77E8BC825F7A9328 /* lab.ios.WebViewTests */,
 			);
 			name = lab.ios.WebViewTests;
 			productName = "WebView labTests";
@@ -186,7 +140,6 @@
 				};
 			};
 			buildConfigurationList = FA25943A279D72470021990D /* Build configuration list for PBXProject "lab.ios.WebView" */;
-			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -194,6 +147,7 @@
 				Base,
 			);
 			mainGroup = FA259436279D72470021990D;
+			preferredProjectObjectVersion = 77;
 			productRefGroup = FA259440279D72470021990D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -209,8 +163,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA25944A279D72490021990D /* Preview Assets.xcassets in Resources */,
-				FA259447279D72490021990D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,13 +180,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA259445279D72470021990D /* ContentView.swift in Sources */,
-				FA259457279D782B0021990D /* SecondWebView.swift in Sources */,
-				FA259443279D72470021990D /* lab_ios_WebViewApp.swift in Sources */,
-				FA259455279D78190021990D /* FirstWebView.swift in Sources */,
-				FA259453279D77780021990D /* Utils.swift in Sources */,
-				FAC00EFF279EA086005F7FE1 /* URLOpener.swift in Sources */,
-				FAC00F01279EA141005F7FE1 /* AppRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,7 +187,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB1000000000000000000001 /* WebViewLabTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,11 +320,11 @@
 		FA25944E279D72490021990D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_ASSET_PATHS = "\"lab.ios.WebView/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -409,11 +353,11 @@
 		FA25944F279D72490021990D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_ASSET_PATHS = "\"lab.ios.WebView/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

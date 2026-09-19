@@ -1,22 +1,25 @@
 import Foundation
-import XCTest
+import Testing
 @testable import lab_ios_WebView
 
 @MainActor
-final class WebViewLabTests: XCTestCase {
-    func testBothScenariosUseHTTPSPages() {
-        XCTAssertEqual(FirstWebView.pageURL.scheme, "https")
-        XCTAssertEqual(SecondWebView.pageURL.scheme, "https")
+@Suite
+struct WebViewLabTests {
+    @Test
+    func bothScenariosUseHTTPSPages() {
+        #expect(FirstWebView.pageURL.scheme == "https")
+        #expect(SecondWebView.pageURL.scheme == "https")
     }
 
-    func testRepositoryUsesTheInjectedURLService() {
+    @Test
+    func repositoryUsesTheInjectedURLService() {
         let opener = RecordingURLOpener()
         let repository = AppRepository(urlOpener: opener)
         let url = URL(string: "https://example.com")!
 
         repository.urlOpener.open(url)
 
-        XCTAssertEqual(opener.openedURLs, [url])
+        #expect(opener.openedURLs == [url])
     }
 }
 
